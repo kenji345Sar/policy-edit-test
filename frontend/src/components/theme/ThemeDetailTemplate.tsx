@@ -54,7 +54,9 @@ const ThemeDetailTemplate = forwardRef<
     );
     const chatRef = useRef<FloatingChatRef>(null);
     const [threadId, setThreadId] = useState<string | null>(null);
-    const [userId, setUserId] = useState<string>(() => userIdManager.getUserId());
+    const [userId, setUserId] = useState<string>(() =>
+      userIdManager.getUserId()
+    );
 
     useImperativeHandle(ref, () => ({
       addMessage: (content: string, type: MessageType) => {
