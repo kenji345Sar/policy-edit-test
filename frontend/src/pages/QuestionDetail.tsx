@@ -210,16 +210,18 @@ const QuestionDetail = () => {
       voteCount: questionDetail?.question?.voteCount ?? 0,
     };
 
+    const questionTitle = questionData.tagLine || questionData.question || "";
+
     const themeData = {
       id: themeId || "",
-      title: themeInfo?.theme?.title || "テーマ",
+      title: questionTitle || themeInfo?.theme?.title || "テーマ",
     };
 
     // This is now handled by the separate useEffect above
 
     const breadcrumbItems = [
       {
-        label: questionData.tagLine || questionData.question,
+        label: questionTitle,
         href: `/themes/${themeId}/questions/${qId}`,
       },
     ];
