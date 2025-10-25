@@ -28,7 +28,7 @@
 
 idea-discussion/backend/models/AdminUser.js ファイルを作成し、以下の内容を実装します。
 
-````javascript
+```javascript
 import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
 import crypto from "crypto";
@@ -111,6 +111,7 @@ adminUserSchema.methods.comparePassword = async function (candidatePassword) {
   const pepperedPassword = applyPepper(candidatePassword);
   return bcrypt.compare(pepperedPassword, this.password);
 };
+```
 
 ### 1.2 認証コントローラーの作成
 
