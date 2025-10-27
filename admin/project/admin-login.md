@@ -234,6 +234,8 @@ const createAdminUser = async (req, res) => {
       role: role || "editor",
       authProvider: "local",
     });
+```
+
 ### 1.3 認証ミドルウェアの作成
 
 idea-discussion/backend/middleware/authMiddleware.js ファイルを作成し、以下の内容を実装します。
